@@ -1,8 +1,18 @@
 ---
 permalink: /about/
 title: "About"
+author_profile: false
 ---
+Soy un amante del mar y de la electronica, mi idea es aplicar mis conocimientos de electronica a proyectos relacionados con el mar y así divertirme un poco. 
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+El blog Luicer's Lab es una página para mostrar mis proyectos de electrónica. Se trataran temas de microcontroladores, sensores, electrónica de potencia, electrónica analógica, domótica y toda tecnología que encuentre interesante. 
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+En estos momentos me interesa hacer aplicaciones de drivers para linternas led y  sobre todo los sensores piezoeléctricos aplicados al sonar para poder hacer ecosondas DIY.
+
+
+
+
+
+
+
+Mail:[luicer@gmx.es](mailto:luicer@gmx.es)
