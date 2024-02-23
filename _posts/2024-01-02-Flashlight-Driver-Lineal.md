@@ -19,8 +19,7 @@ excerpt: "En este post se explica el diseño de un driver con regulador lineal r
 header:
 
     #image: /assets/images/Sensor1.jpg
-    #teaser: /assets/images/2024/Lineal_Led/teaser.jpg
-    teaser: /assets/images/Sensor1.jpg
+    teaser: /assets/images/2024/Lineal_Led/Teaser.jpg
 ---
 
 # Introducción
@@ -28,7 +27,7 @@ header:
 En este articulo se va ha mostrar un diseño de un driver para una linterna led comercial tipo Ultrafire DV-S9 diving light, en internet se pueden encontrar muchos clones a precio muy ajustado. Es una linterna muy utilizada en pesca submarina, es funcional pero presenta una serie de problemas que se explicaran más adelante.
 
 {:style="text-align:center;"}
-![Ultrafire DV-S9](/assets/images/2024/Lineal_Led/teaser.jpg "DV-S9") 
+![Ultrafire DV-S9](/assets/images/2024/Lineal_Led/Teaser.jpg "DV-S9") 
 
 <!-- <img src="/assets/images/2024/DV-S9.jpg" alt="DV-S9" align=”middle”>  -->
 
@@ -63,7 +62,7 @@ Básicamente el diseño del driver utiliza un regulador lineal implementado con 
 El esquema que he utilizado para implementar el diseño es el siguiente:
 
 {:style="text-align:center;"}
-![Schematic](/assets/images/2024/Lineal_Led/schematic.png "Sch") 
+![Schematic](/assets/images/2024/Lineal_Led/Schematic.png "Sch") 
 
 Este esquema se puede descargara aquí: [Esquema](/assets/images/2024/Lineal_Led/Regulador_Lineal_Sch.pdf)
 
@@ -93,7 +92,7 @@ Se ha diseñado una PCB de dos caras que se ajusta al al carcasa de la linterna 
 
 La PCB montada queda de la siguiente manera:
 
-![Assembly](/assets/images/2024/Lineal_Led/build.jpg "Assembly") 
+![Assembly](/assets/images/2024/Lineal_Led/Build.jpg "Assembly") 
 
 
 # Medidas Realizadas.
