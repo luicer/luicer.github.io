@@ -1,29 +1,29 @@
 ---
-title: "Driver Lineal Linterna DV-S9 Led Open Source Hardware."
+title: "Driver Lineal Linterna de buceo DV-S9 Led Open Source Hardware."
 
 
 
 toc: true
-categories:
-  - Linterna
+categories:  
+  - Español
 full-width: true
 tags:
-  - Lineal
+  - Linterna
+  - Driver Lineal
   - OSHW
-  - LED
+ 
+  
 
   
 
 excerpt: "En este post se explica el diseño de un driver con regulador lineal regulable para linterna de buceo tipo DV-S9 para una intensidad de hasta 3 A y un tensión de entrada entre 3V y 4,2V además de una reducida intensidad de vacío. El driver consigue una eficiencia de entre 90 % y 70 % a intensidad máxima. Este diseño es open source hardware con los documentos diseño almacenados en Github."
 
 header:
-
-    #image: /assets/images/Sensor1.jpg
     teaser: /assets/images/2024/Lineal_Led/Teaser.jpg
 ---
+[English]({% post_url 2024-02-26-Flashlight-Driver-Lineal-eng %})
 
-# Introducción
-
+# Introducción.
 En este articulo se va ha mostrar un diseño de un driver para una linterna led comercial tipo Ultrafire DV-S9 diving light, en internet se pueden encontrar muchos clones a precio muy ajustado. Es una linterna muy utilizada en pesca submarina, es funcional pero presenta una serie de problemas que se explicaran más adelante.
 
 {:style="text-align:center;"}
@@ -74,7 +74,7 @@ Este esquema se puede descargara aquí: [Esquema](/assets/images/2024/Lineal_Led
 Para alimentar el driver se utiliza una batería tipo LiON 18650 que puede suministrar entre 2,5 V y 4,2 V y el LED XM-L necesita tensiones entre 3V y 3.4 V por tanto se diseñará unas tension de alimentación entre 3V y 4.2V.De esta manera los componentes se seleccionarán para un tensión máxima de 4.2 V y para poder poder alimentar de manera estable la parte de control se utiliza un LDO de 3V modelo HT3170. 
 
 ## Sensor de corriente.
-Como sensor de corriente se utiliza un resistencia de 10mOHms y un amplificador para elevar la tensión de medida. Se ha utilizado un resistencia pequeña para que su caída de tensión no limite la tensión de alimentación del led, pudiendo alimentar la linterna con una tensión de sólo 3V. Para la implementación del amplificador se ha ha elegido un OPAMP de precisión y de bajo offset como el SGM8511.
+Como sensor de corriente se utiliza un resistencia de 10mΩ y un amplificador para elevar la tensión de medida. Se ha utilizado un resistencia pequeña para que su caída de tensión no limite la tensión de alimentación del led, pudiendo alimentar la linterna con una tensión de sólo 3V. Para la implementación del amplificador se ha ha elegido un OPAMP de precisión y de bajo offset como el SGM8511.
 
 
 ## Regulador lineal.
@@ -98,7 +98,7 @@ La PCB montada queda de la siguiente manera:
 
 ![Assembly](/assets/images/2024/Lineal_Led/Build.jpg "Assembly") 
 
-En el repositorio se incluyen los archivos Gerber de fabricación generados para le fabricante de PCB JLCPCB, pero que son compatible con al mayoría de casas de fabricación de PCBs. 
+En el repositorio de github se incluyen los archivos Gerber de fabricación generados para le fabricante de PCB JLCPCB, pero que son compatible con al mayoría de casas de fabricación de PCBs. 
 
 # BOM.
 El listado de materiales necesarios es el siguiente, se ha incluido el código LCSC de los componentes.
@@ -133,7 +133,6 @@ La intensidad medida a partir de la tensión en la resistencia de 10 miliohms co
 Una intensidad de 2A genera una tensión de aproximadamente 20mV sobre la resistencia, se comprueba que el rizado de la intensidad es pequeño, en ningún caso pasa por 0.
 
 # Medida de eficiencia y tensión de funcionamiento.
-
 Con el objetivo de poder obtener la eficiencia del driver se han hecho medidas variando la tension de entrada entre 2,9 V y 4,2 V, midiendo la tensión e intensidad de entrada y la tensión e  intensidad de salida.
 
 La intensidad de salida en función de la intensidad de entrada:
@@ -150,7 +149,6 @@ Se comprueba que la linterna es utilizable de 3 V con una intensidad de 1 A y un
 
 
 # Comparación de haces de linternas.
-
 La comparación entre los dos haces de una linterna estándar de 1,5 A. y una linterna con el driver diseñado regulado a 2 A es el siguiente:
 
 {:style="text-align:center;"}
@@ -159,7 +157,6 @@ La comparación entre los dos haces de una linterna estándar de 1,5 A. y una li
 Se observa que el driver diseñado alumbra un poco más que el driver original.
 
 # Documentación de diseño y Licencia.
-
 Toda la documentación del diseño incluido el proyecto en KICAD de la PCB, los documentos de fabricación, el esquema y el listado de material se encuentra en le siguiente repositorio de Github:
 
 [https://github.com/luicer/Linear-Flashlight-DV-S9-Driver](https://github.com/luicer/Linear-Flashlight-DV-S9-Driver)

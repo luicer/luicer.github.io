@@ -1,9 +1,14 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categorías"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "English"
+    url: /Eng_home/
+  # - title: "Posts"
+  #   url: /posts/
+  # - title: "Categorías"
+  #   url: /categories/
+  - title: "Tags en Español"
+    url: /Es_tags/
+  - title: "English Tags"
+    url: /Eng_tags
   - title: "About"
     url: /about/
+    
