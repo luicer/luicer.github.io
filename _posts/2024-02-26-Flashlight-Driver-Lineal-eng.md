@@ -99,10 +99,10 @@ The assembled PCB looks as follows:
 
 ![Assembly](/assets/images/2024/Lineal_Led/Build.jpg "Assembly") 
 
-In the Github repository, the manufacturing Gerber files generated for the PCB manufacturer JLCPCB are included, but they are compatible with most PCB manufacturing houses. 
+In the Github repository, includes all the manufacturing Gerber files generated for the PCB manufacturer JLCPCB, but they are compatible with most PCB manufacturing houses. 
 
 # BOM.
-The bill of required materials is as follows; the LCSC component codes have been included
+The bill of required materials is as follows; includes the LCSC component codes. 
 
 {:style="text-align:center;"}
 ![BOM](/assets/images/2024/Lineal_Led/BOM.png "BOM") 
@@ -118,7 +118,7 @@ Firstly, the standby intensity is measured with the Hall effect switch deactivat
 ![Vacío](/assets/images/2024/Lineal_Led/Fun_1.jpg "Vacío") 
 
 
-It is verified that the stand by current is basically that of the Hall effect sensor, totaling 4mA. 
+We can see that the stand by current is basically that of the Hall effect sensor, totaling 4mA. 
 
 Then, the Hall effect sensor is activated, and the current can be measured with the potentiometer adjusted to 2 A.
 
@@ -131,7 +131,7 @@ The intensity measured from the voltage across the 10 milliohm resistor with the
 {:style="text-align:center;"}
 ![Isense](/assets/images/2024/Lineal_Led/Isense_1.png "Isense")
 
-An intensity of 2A generates a voltage of approximately 20mV across the resistor. It is verified that the ripple of the intensity is small; in no case does it pass through 0..
+An intensity of 2A generates a voltage of approximately 20mV across the resistor. We can see that the ripple of the intensity is small; in no case does it pass through 0.
 
 # Measurement of efficiency and operating voltage.
 
