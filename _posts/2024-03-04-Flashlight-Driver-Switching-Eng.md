@@ -1,165 +1,157 @@
 ---
-title: "Driver Lineal Linterna de buceo DV-S9 Led Open Source Hardware."
-
-
+title: "Switching Driver for Diving Flashlight DV-S9 Led Open Source Hardware."
+language: english
 
 toc: true
-categories:  
-  - Español
+categories: 
+  - LED Flashlight
+  
 full-width: true
 tags:
-  - Linterna
-  - Driver Lineal
+  - Flashlight
+  - Driver Switching
   - OSHW
- 
-  
 
-  
-
-excerpt: "En este post se explica el diseño de un driver con regulador lineal regulable para linterna de buceo tipo DV-S9 para una intensidad de hasta 3 A y un tensión de entrada entre 3V y 4,2V además de una reducida intensidad de vacío. El driver consigue una eficiencia de entre 90 % y 70 % a intensidad máxima. Este diseño es open source hardware con los documentos diseño almacenados en Github."
+excerpt: "This post explains the design of an adjustable switching regulator driver for DV-S9 diving flashlight, supporting current up to 1 A and input voltage between 3V and 4.2V, along with low standby current. The driver achieves up to 85% efficiency at maximum current. This design is open source hardware with design documents stored on Github."
 
 header:
-    teaser: /assets/images/2024/Lineal_Led/Teaser.jpg
+    teaser: /assets/images/2024/Switching_Led/Teaser.jpg
 ---
-[English]({% post_url 2024-02-26-Flashlight-Driver-Lineal-eng %})
 
-# Introducción.
-En este articulo se va ha mostrar un diseño de un driver para una linterna led comercial tipo Ultrafire DV-S9 diving light, en internet se pueden encontrar muchos clones a precio muy ajustado. Es una linterna muy utilizada en pesca submarina, es funcional pero presenta una serie de problemas que se explicaran más adelante.
+[Spanish]({% post_url 2024-03-03-Flashlight-Driver-Switching %})
 
-{:style="text-align:center;"}
-![Ultrafire DV-S9](/assets/images/2024/Lineal_Led/Teaser.jpg "DV-S9") 
-
-<!-- <img src="/assets/images/2024/DV-S9.jpg" alt="DV-S9" align=”middle”>  -->
-
-Esta linterna se alimenta con una batería de ión de litio 18650 o 2320 y utiliza un led tipo cree cree tipo XM-L2. A partir de las características eléctricas del XM-L2 se puede ver que para intensidades entre 1,5 A y 3 A se necesitan tensiones entre 3 V i 3.4 V este voltage se debe suministrar a partir de las baterías pero el voltage que proporcionan la baterías de ion de litio está entre entre 2,5 V y 4,2 V. Estas linternas utilizan un driver para mantener la corriente constante, normalmente se utiliza un diver reductor que permite disminuir la tensión de la batería hasta el valor necesario para suministrar la corriente necesaria. Al ser un  driver reductor hay un pequeño porcentaje de la energía de la batería que no se puede utilizar ya que si la tensión de la batería es inferior a la tensión del LED,éste no pude alumbrar. Estos driver pueden ser del tipo lineal, más sencillos o del tipo conmutado que requiere un circuito más complejo. 
+# Introduction
+Following the design of a linear driver [Link]({% post_url 2024-02-26-Flashlight-Driver-Lineal-eng %}), this article presents a design of a switching driver for a commercial LED flashlight, specifically the Ultrafire DV-S9 diving light. This design aims to achieve higher efficiency, thereby better utilizing battery energy.
 
 {:style="text-align:center;"}
-![XML2_EC](/assets/images/2024/Lineal_Led/XML2_EC.png "Características eléctricas XML2") 
+![Ultrafire DV-S9](/assets/images/2024/Switching_Led/Teaser.jpg "DV-S9") 
 
-La linterna de serie consta de un driver lineal a partir del integrado AMC7136 que controla tres transistores sot23 y consigue el control de corriente a traves de un microcontrolador tipo Attiny13 activando y desactivando el regulador a traves de una señal PWM. Según mis medidas el driver puede dar una intensidad máxima de 1,5 A y en vacío tiene un consumo de 10 mA. Para activar la linterna utiliza un switch de efecto hall. El consumo en vacío debido al switch de efecto hall y al microcontrolador es relativamente alto y provoca que la batería se descargue si no se desconecta cuando no se utiliza. Además en determinadas circunstancias se puede provocar electrolisis en la carcasa de aluminio. 
-
-<!-- {:style="text-align:center;"}
-![Driver DV-S9](/assets/images/2024/Lineal_Led/DriverDVS9.jpg "Driver")  -->
+The objective is to design a low-cost driver to replace the original one, allowing current regulation up to 1 A using a DC/DC switching converter-based driver for regulation.
 
 {:style="text-align:center;"}
-<img src="/assets/images/2024/Lineal_Led/DriverDVS9.jpg" title="Diver Original" width="300" height="auto">
-<img src="/assets/images/2024/Lineal_Led/Driver_d.jpg" title="Diseño" width="300" height="auto">
+<img src="/assets/images/2024/Lineal_Led/DriverDVS9.jpg" title="Original Driver" width="300" height="auto">
+<img src="/assets/images/2024/Switching_Led/Driver_SW.png" title="Design" width="300" height="auto">
+ 
+# Driver Specifications
+The designed driver features:
+- Switching regulator type.
+- Adjustable current up to 1 A.
+- Input voltage from 3 V to 4.2 V.
+- Standby current of 4 mA.
 
-El objetivo es diseñar un driver de bajo coste para sustituir el original que permita regular la corriente entre 1 A y 3 A y que no necesite un microcontrolador para disminuir la corriente de vacío.   
-
-# Especificaciones Driver.
-El diseño driver tiene las siguientes características:  
-- Regulador de tipo lineal.
-- Intensidad regulable de hasta 3 A.
-- Tensión de entrada de 3 V a 4,2 V.
-- Intensidad en vacío de 4 mA.
-
-# Diagrama de bloques.
-El diagrama de bloques de diseño propuesto es el siguiente: 
+# Block Diagram
+The proposed design's block diagram is as follows:
 
 {:style="text-align:center;"}
-![Block](/assets/images/2024/Lineal_Led/Sch_LED_Lineal.jpg "Block") 
+![Block](/assets/images/2024/Switching_Led/LED_switching.drawio.png "Block") 
 
-Básicamente el diseño del driver utiliza un regulador lineal implementado con un amplificador operacional y un transistor de efecto campo MOSFET para poder suministrar la intensidad al LED requerida. El amplificador operacional se realimenta con un medidor de corriente para poder controlar la intensidad de salida en el LED y se controla a partir de un sensor de efecto Hall.
+The driver design utilizes a DC/DC step-down regulator with current sensing to measure the supplied current to the LED. A DC/DC regulator enable pin is used to turn the system on or off.
 
-# Esquema.
-El esquema que he utilizado para implementar el diseño es el siguiente:
-
-{:style="text-align:center;"}
-![Schematic](/assets/images/2024/Lineal_Led/Schematic.png "Sch") 
-
-Este esquema se puede descargara aquí: [Esquema](/assets/images/2024/Lineal_Led/Regulador_Lineal_Sch.pdf)
-
-## Alimentación.
-Para alimentar el driver se utiliza una batería tipo LiON 18650 que puede suministrar entre 2,5 V y 4,2 V y el LED XM-L necesita tensiones entre 3V y 3.4 V por tanto se diseñará unas tension de alimentación entre 3V y 4.2V.De esta manera los componentes se seleccionarán para un tensión máxima de 4.2 V y para poder poder alimentar de manera estable la parte de control se utiliza un LDO de 3V modelo HT3170. 
-
-## Sensor de corriente.
-Como sensor de corriente se utiliza un resistencia de 10mΩ y un amplificador para elevar la tensión de medida. Se ha utilizado un resistencia pequeña para que su caída de tensión no limite la tensión de alimentación del led, pudiendo alimentar la linterna con una tensión de sólo 3V. Para la implementación del amplificador se ha ha elegido un OPAMP de precisión y de bajo offset como el SGM8511.
-
-
-## Regulador lineal.
-El circuito utiliza un típico regulador lineal con un MOSFET y un OPAMP realimentado con el sensor de corriente para poder controlar la intensidad que pasa por el led en función de la tensión de entrada. Para la implementación del regulador se ha elegido el mismo OPAMP que el utilizado para el sensor de corriente, el MOSFET IRLR2905 que con una Ron muy baja y un tensión Vgs baja, para poder utilizar la linterna hasta un tensión de entrada de 3V.  
-
-## Interruptor.
-El interruptor controla la distancia entre un imán y un sensor de efecto hall S49E. Para activar la linterna se compara la salida del sensor de efecto hall con el valor de tensión medido de cuando el interruptor está en posición intermedia del recorrido, este valor es de aprox 1.72V. Para implementar el comparador se utiliza un OPAMP del mismo modelo que el utilizado en el resto del driver y un transistor para eliminar la consigna del regulador lineal.
-
-# PCB.
-Se ha diseñado una PCB de dos caras que se ajusta al al carcasa de la linterna comercial y que sea fácilmente sustituible. Se ha tenido en cuenta las intensidades admisibles de las pistas y reglas de control de EMIs para que la medida de corriente con una resistencia pequeña de medida de corriente sea fiable.  
+# Schematic
+The schematic used to implement the design is as follows:
 
 {:style="text-align:center;"}
-<img src="/assets/images/2024/Lineal_Led/Top.png" title="Top" width="300" height="auto">
-<img src="/assets/images/2024/Lineal_Led/Top_pcb.png" title="Top_pcb" width="300" height="auto">
+![Schematic](/assets/images/2024/Switching_Led/Schematic.png "Sch") 
+
+This schematic can be downloaded [here](/assets/images/2024/Switching_Led/Schematic.pdf).
+
+## Power Supply
+Similar to the linear driver case, the driver is designed for a supply voltage between 3V and 4.2V. Components are selected for a maximum voltage of 4.2V, and an LDO of 3V model HT3170 is used to stably power the control section.
+
+## Current Sensor
+Similar to the linear driver, a 10mΩ resistor and an amplifier are used as the current sensor. For the amplifier implementation, a precision, low-offset OPAMP like SGM8511 is chosen, similar to the one used in the linear driver design.
+
+## Switching Regulator
+The circuit uses the integrated chip MT3410L, implementing a synchronous buck converter. It operates at a switching frequency of up to 1.5 MHz with a very low Rdson resistance of up to 200mΩ. The integrated chip has a 600 mV feedback circuit compared with the voltage measured from the current sensor. To avoid oscillation issues, a compensator is added with capacitors C3 and C5 in the current amplification circuit.
+
+## Switch
+In this flashlight, the switch controls the distance between a magnet and a hall effect sensor S49E. This design incorporates two options to activate and deactivate the flashlight using the ENABLE pin of the MT3410L controller. In the first option, an OPAMP is used to compare with the threshold voltage of the switch's middle position (1.78 V). In the second option, the voltage is compared with the PN junction voltage (0.6 V) of a BJT transistor using a voltage divider.
+
+# PCB
+A double-sided PCB has been designed to fit into the commercial flashlight casing and be easily replaceable. Consideration has been given to track currents and EMI control rules to ensure reliable current measurement with a small current measuring resistor and minimize PWM track surfaces to avoid disturbance emissions.
 
 {:style="text-align:center;"}
-<img src="/assets/images/2024/Lineal_Led/Bottom.png" title="Bottom" width="300" height="auto">
-<img src="/assets/images/2024/Lineal_Led/Bottom_pcb.png" title="Bottom_pcb" width="300" height="auto">
-
-La PCB montada queda de la siguiente manera:
-
-![Assembly](/assets/images/2024/Lineal_Led/Build.jpg "Assembly") 
-
-En el repositorio de github se incluyen los archivos Gerber de fabricación generados para le fabricante de PCB JLCPCB, pero que son compatible con al mayoría de casas de fabricación de PCBs. 
-
-# BOM.
-El listado de materiales necesarios es el siguiente, se ha incluido el código LCSC de los componentes.
+<img src="/assets/images/2024/Switching_Led/Top.png" title="Top" width="300" height="auto">
+<img src="/assets/images/2024/Switching_Led/Top_PCB.png" title="Top_pcb" width="300" height="auto">
 
 {:style="text-align:center;"}
-![BOM](/assets/images/2024/Lineal_Led/BOM.png "BOM") 
+<img src="/assets/images/2024/Switching_Led/Bottom.png" title="Bottom" width="300" height="auto">
+<img src="/assets/images/2024/Switching_Led/Bottom_PCB.png" title="Bottom_pcb" width="300" height="auto">
 
-En el momento de la realización del post el precio de los componentes para la fabricación de 10 unidades en la pagina web de LCSC es de 49,75 $ por tanto el coste de componentes por unidad sería de unos 4,975$/u. 
-
-# Medidas Realizadas.
-Se han hecho las siguientes mediciones:
-
-Primeramente se mide la intensidad en vacío, con el interruptor de efecto hall desactivado.
+The assembled PCB looks as follows:
 
 {:style="text-align:center;"}
-![Vacío](/assets/images/2024/Lineal_Led/Fun_1.jpg "Vacío") 
+![Assembly](/assets/images/2024/Switching_Led/Assembly.png "Assembly") 
 
+The Github repository includes Gerber files for manufacturing generated for the PCB manufacturer JLCPCB, compatible with most PCB manufacturing houses.
 
-Se comprueba que la intensidad consumida en vacío es básicamente las del sensor efecto hall dando un total de 4mA.
-
-Después se activa el sensor de efecto hall y se pude medir la corriente con el potenciómetro ajustado a 2 A.
-
-{:style="text-align:center;"}
-![2A](/assets/images/2024/Lineal_Led/Fun_2.jpg "2A") 
-
-
-La intensidad medida a partir de la tensión en la resistencia de 10 miliohms con el osciloscopio es la siguiente:
+# BOM
+The list of required materials is as follows, including LCSC component codes.
 
 {:style="text-align:center;"}
-![Isense](/assets/images/2024/Lineal_Led/Isense_1.png "Isense")
+![BOM](/assets/images/2024/Switching_Led/BOM.png "BOM") 
 
-Una intensidad de 2A genera una tensión de aproximadamente 20mV sobre la resistencia, se comprueba que el rizado de la intensidad es pequeño, en ningún caso pasa por 0.
+At the time of writing this post, the component cost for manufacturing 10 units on the LCSC website is $23.13. Therefore, the component cost per unit would be approximately $2.313.
 
-# Medida de eficiencia y tensión de funcionamiento.
-Con el objetivo de poder obtener la eficiencia del driver se han hecho medidas variando la tension de entrada entre 2,9 V y 4,2 V, midiendo la tensión e intensidad de entrada y la tensión e  intensidad de salida.
+# Measurements
+The following measurements have been made:
 
-La intensidad de salida en función de la intensidad de entrada:
-
-{:style="text-align:center;"}
-![Intensidad](/assets/images/2024/Lineal_Led/Intensidad.jpg "Intensidad")
-
-La eficiencia en función de la intensidad de entrada:
+Initially, standby current is measured with the hall effect switch deactivated.
 
 {:style="text-align:center;"}
-![Eficiencia](/assets/images/2024/Lineal_Led/Eficiencia.jpg "Eficiencia")
+![Stand_by](/assets/images/2024/Switching_Led/Fun_1.jpg "Stand_by") 
 
-Se comprueba que la linterna es utilizable de 3 V con una intensidad de 1 A y una eficiencia del 98% hasta 4,2 V con una eficiencia minima del 70%.
+Similar to the linear driver case, the standby current consumed is essentially that of the hall effect sensor, totaling 4mA.
 
-
-# Comparación de haces de linternas.
-La comparación entre los dos haces de una linterna estándar de 1,5 A. y una linterna con el driver diseñado regulado a 2 A es el siguiente:
+Then, the hall effect sensor is activated, and current can be measured with the potentiometer adjusted to 1A.
 
 {:style="text-align:center;"}
-![Haces](/assets/images/2024/Lineal_Led/Haces.jpg "Haz")
+![2A](/assets/images/2024/Switching_Led/Fun_2.jpg "1A") 
 
-Se observa que el driver diseñado alumbra un poco más que el driver original.
+The consumed current should be approximately 1A · 3.7V / 3V · eff ≈ 0.77A, which matches the measured current.
 
-# Documentación de diseño y Licencia.
-Toda la documentación del diseño incluido el proyecto en KICAD de la PCB, los documentos de fabricación, el esquema y el listado de material se encuentra en le siguiente repositorio de Github:
+The current measured from the voltage across the 10mΩ resistor with the oscilloscope is as follows:
 
-[https://github.com/luicer/Linear-Flashlight-DV-S9-Driver](https://github.com/luicer/Linear-Flashlight-DV-S9-Driver)
+{:style="text-align:center;"}
+![Isense](/assets/images/2024/Switching_Led/Iout=1A.png "Isense")
 
+Channel 1 measures the current supplied to the LED, taking into account the measurement error (approximately 2mV), the current is 1A with a ripple of 350mA. The current does not pass through 0, thus avoiding flickering. Channel 2 measures the feedback voltage, which is 600mV as indicated in the DC/DC regulator datasheet, but oscillations causing the measured ripple are also observed.
 
-Este diseño es open source hardware según la licencia CERN OHL V2 permisiva.
+To improve this behavior, capacitors C3 and C5 have been adjusted through testing with various values, yielding the best result with C3=15pF and C5=1nF.
+
+Zooming in with a time base of 500ns/div, the signal caused by the Mosfet switching can be observed.
+
+{:style="text-align:center;"}
+![Isense_1](/assets/images/2024/Switching_Led/Iout=1A_1.png "Isense_1") 
+
+It can be observed that the feedback voltage signal (channel 2) varies abruptly during Mosfet switching, which is likely causing the oscillations. This raises suspicion that the current measurement op-amp is too slow. To amend this issue in the future, consideration will be given to using a faster op-amp such as the AD8605 Precision, Low Noise, CMOS, Rail-to-Rail, Input/Output Operational Amplifier.
+
+# Efficiency and Operating Voltage Measurement
+With the aim of obtaining the efficiency of the driver, measurements were taken by varying the input voltage between 2.9 V and 4.2 V, measuring the input and output voltage and current.
+
+The output current as a function of the input current:
+
+{:style="text-align:center;"}
+![Intensidad](/assets/images/2024/Switching_Led/Iout.png "Intensidad")
+
+The efficiency as a function of the input current:
+
+{:style="text-align:center;"}
+![Eficiencia](/assets/images/2024/Switching_Led/efficiency.png "Eficiencia")
+
+It confirms that the flashlight is usable from 3 V to 4.2 V with a consistent efficiency of approximately 85%.
+
+# Flashlight Beam Comparison
+The comparison between the beams of a standard 1.5 A flashlight and a flashlight with the designed driver regulated to 1 A is as follows:
+
+{:style="text-align:center;"}
+![Haces](/assets/images/2024/Switching_Led/Haces.jpg "Haz")
+
+It can be observed that the designed driver and the original driver illuminate similarly.
+
+# Design Documentation and License
+All design documentation, including the KICAD PCB project, manufacturing documents, schematic, and bill of materials, are available in the following Github repository:
+
+[https://github.com/luicer/Switching-Flashlight-DV-S9-Driver](https://github.com/luicer/Switching-Flashlight-DV-S9-Driver)
+
+This design is open source hardware under the permissive CERN OHL V2 license.

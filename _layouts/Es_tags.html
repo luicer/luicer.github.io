@@ -34,7 +34,7 @@ layout: archive
         <h2 class="archive__subtitle">{{ tag[0] }}</h2>
         <div class="entries-{{ entries_layout }}">
           {% for post in tag.last %}
-            {% if post.categories contains "Español" %} 
+            {% if post.language ==  "español" %}
               {% include archive-single.html type=entries_layout %}
             {% endif %}
           {% endfor %}

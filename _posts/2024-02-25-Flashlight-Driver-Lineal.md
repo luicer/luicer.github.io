@@ -1,11 +1,13 @@
 ---
 title: "Driver Lineal Linterna de buceo DV-S9 Led Open Source Hardware."
+language: español
 
 
 
 toc: true
-categories:  
-  - Español
+categories:
+  - Linterna LED  
+  
 full-width: true
 tags:
   - Linterna
@@ -68,10 +70,10 @@ El esquema que he utilizado para implementar el diseño es el siguiente:
 {:style="text-align:center;"}
 ![Schematic](/assets/images/2024/Lineal_Led/Schematic.png "Sch") 
 
-Este esquema se puede descargara aquí: [Esquema](/assets/images/2024/Lineal_Led/Regulador_Lineal_Sch.pdf)
+Este esquema se puede descargar aquí: [Esquema](/assets/images/2024/Lineal_Led/Regulador_Lineal_Sch.pdf)
 
 ## Alimentación.
-Para alimentar el driver se utiliza una batería tipo LiON 18650 que puede suministrar entre 2,5 V y 4,2 V y el LED XM-L necesita tensiones entre 3V y 3.4 V por tanto se diseñará unas tension de alimentación entre 3V y 4.2V.De esta manera los componentes se seleccionarán para un tensión máxima de 4.2 V y para poder poder alimentar de manera estable la parte de control se utiliza un LDO de 3V modelo HT3170. 
+Para alimentar el driver se utiliza una batería tipo LiON 18650 que puede suministrar entre 2,5 V y 4,2 V y el LED XM-L necesita tensiones entre 3V y 3.4 V por tanto el driver se diseñará para una tensión de alimentación de entre 3V y 4.2V.De esta manera los componentes se seleccionarán para un tensión máxima de 4.2 V y para poder poder alimentar de manera estable la parte de control se utiliza un LDO de 3V modelo HT3170. 
 
 ## Sensor de corriente.
 Como sensor de corriente se utiliza un resistencia de 10mΩ y un amplificador para elevar la tensión de medida. Se ha utilizado un resistencia pequeña para que su caída de tensión no limite la tensión de alimentación del led, pudiendo alimentar la linterna con una tensión de sólo 3V. Para la implementación del amplificador se ha ha elegido un OPAMP de precisión y de bajo offset como el SGM8511.
@@ -84,7 +86,7 @@ El circuito utiliza un típico regulador lineal con un MOSFET y un OPAMP realime
 El interruptor controla la distancia entre un imán y un sensor de efecto hall S49E. Para activar la linterna se compara la salida del sensor de efecto hall con el valor de tensión medido de cuando el interruptor está en posición intermedia del recorrido, este valor es de aprox 1.72V. Para implementar el comparador se utiliza un OPAMP del mismo modelo que el utilizado en el resto del driver y un transistor para eliminar la consigna del regulador lineal.
 
 # PCB.
-Se ha diseñado una PCB de dos caras que se ajusta al al carcasa de la linterna comercial y que sea fácilmente sustituible. Se ha tenido en cuenta las intensidades admisibles de las pistas y reglas de control de EMIs para que la medida de corriente con una resistencia pequeña de medida de corriente sea fiable.  
+Se ha diseñado una PCB de dos caras que se ajusta al al carcasa de la linterna comercial y que sea fácilmente sustituible. Se ha tenido en cuenta las intensidades admisibles de las pistas y reglas de control de EMIs para que la medida de corriente con una resistencia pequeña sea fiable.  
 
 {:style="text-align:center;"}
 <img src="/assets/images/2024/Lineal_Led/Top.png" title="Top" width="300" height="auto">
@@ -116,7 +118,6 @@ Primeramente se mide la intensidad en vacío, con el interruptor de efecto hall 
 {:style="text-align:center;"}
 ![Vacío](/assets/images/2024/Lineal_Led/Fun_1.jpg "Vacío") 
 
-
 Se comprueba que la intensidad consumida en vacío es básicamente las del sensor efecto hall dando un total de 4mA.
 
 Después se activa el sensor de efecto hall y se pude medir la corriente con el potenciómetro ajustado a 2 A.
@@ -130,7 +131,7 @@ La intensidad medida a partir de la tensión en la resistencia de 10 miliohms co
 {:style="text-align:center;"}
 ![Isense](/assets/images/2024/Lineal_Led/Isense_1.png "Isense")
 
-Una intensidad de 2A genera una tensión de aproximadamente 20mV sobre la resistencia, se comprueba que el rizado de la intensidad es pequeño, en ningún caso pasa por 0.
+Una intensidad de 2A genera una tensión de aproximadamente 20mV sobre la resistencia, se comprueba que el rizado de la intensidad es pequeño, en ningún caso la intensidad pasa por 0, por tanto no hay flicker.
 
 # Medida de eficiencia y tensión de funcionamiento.
 Con el objetivo de poder obtener la eficiencia del driver se han hecho medidas variando la tension de entrada entre 2,9 V y 4,2 V, midiendo la tensión e intensidad de entrada y la tensión e  intensidad de salida.
@@ -140,13 +141,12 @@ La intensidad de salida en función de la intensidad de entrada:
 {:style="text-align:center;"}
 ![Intensidad](/assets/images/2024/Lineal_Led/Intensidad.jpg "Intensidad")
 
-La eficiencia en función de la intensidad de entrada:
+La eficiencia en función de la tensión de entrada:
 
 {:style="text-align:center;"}
 ![Eficiencia](/assets/images/2024/Lineal_Led/Eficiencia.jpg "Eficiencia")
 
 Se comprueba que la linterna es utilizable de 3 V con una intensidad de 1 A y una eficiencia del 98% hasta 4,2 V con una eficiencia minima del 70%.
-
 
 # Comparación de haces de linternas.
 La comparación entre los dos haces de una linterna estándar de 1,5 A. y una linterna con el driver diseñado regulado a 2 A es el siguiente:

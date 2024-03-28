@@ -1,20 +1,19 @@
 ---
 title: "Linear driver for diving flashlight DV-S9 Led Open Source Hardware."
+language: english
 
 
 
 toc: true
 categories:
-  - English  
+  - LED Flashlight
+    
 full-width: true
 tags:
   - Flashlight
   - Driver Lineal
   - OSHW
-
  
-
-  
 
 excerpt: "This post explain the design of a variable linear driver for the DV-S9 diving flashlight, the driver is capable of handling currents of up to 3 A the  input voltage range is between  3V and 4.2V, and has low standby current. The driver achieves an efficiency of between 90% and 70% at maximum current. This design is open source hardware, with the design documents stored on Github."
 
@@ -25,7 +24,7 @@ header:
 [Español]({% post_url 2024-02-25-Flashlight-Driver-Lineal %})
 
 # Introduction.
-In this article, a design for a driver for a commercial Ultrafire DV-S9 diving light LED flashlight will be presented. Many clones of this flashlight can be found online at very affordable prices. It is a widely used flashlight in spearfishing, this torch is functional but with a several problems that will be explained later."
+In this article, a design for a driver for a commercial Ultrafire DV-S9 diving light LED flashlight will be presented. Many clones of this flashlight can be found online at very affordable prices. It is a widely used flashlight in spearfishing, this torch is functional but with a several problems that will be explained later.
 
 {:style="text-align:center;"}
 ![Ultrafire DV-S9](/assets/images/2024/Lineal_Led/Teaser.jpg "DV-S9") 
@@ -125,8 +124,7 @@ Then, the Hall effect sensor is activated, and the current can be measured with 
 {:style="text-align:center;"}
 ![2A](/assets/images/2024/Lineal_Led/Fun_2.jpg "2A") 
 
-
-The intensity measured from the voltage across the 10 milliohm resistor with the oscilloscope is as follows:
+The current measured from the voltage across the 10 milliohm resistor with the oscilloscope is as follows:
 
 {:style="text-align:center;"}
 ![Isense](/assets/images/2024/Lineal_Led/Isense_1.png "Isense")
@@ -137,22 +135,22 @@ An intensity of 2A generates a voltage of approximately 20mV across the resistor
 
 In order to obtain the driver efficiency, measurements have been taken by varying the input voltage between 2.9 V and 4.2 V, measuring both the input voltage and current, as well as the output voltage and current.
 
-The efficiency as a function of input intensity:
+The current as a function of input voltage:
 
 {:style="text-align:center;"}
 ![Intensidad](/assets/images/2024/Lineal_Led/Intensidad.jpg "Intensidad")
 
-La eficiencia en función de la intensidad de entrada:
+The efficiency as a function of input voltage:
 
 {:style="text-align:center;"}
 ![Eficiencia](/assets/images/2024/Lineal_Led/Eficiencia.jpg "Eficiencia")
 
-It is verified that the flashlight is usable from 3 V with an intensity of 1 A and an efficiency of 98% up to 4.2 V with a minimum efficiency of 70%.
+We can see that the flashlight is usable from 3 V with an intensity of 1 A and an efficiency of 98% up to 4.2 V with a minimum efficiency of 70%.
 
 
-# Beam comparison 
+# Beam comparison. 
 
-The comparison between the  beam of a standard 1.5 A flashlight and a beam with the flashlight with the driver designed regulated at 2 A is as follows:
+The comparison between the beam of a standard 1.5 A flashlight and a beam with the flashlight with the driver designed regulated at 2 A is as follows:
 
 {:style="text-align:center;"}
 ![Haces](/assets/images/2024/Lineal_Led/Haces.jpg "Haz")
@@ -166,6 +164,6 @@ All the documentation for the design, including the KiCad PCB project, manufactu
 [https://github.com/luicer/Linear-Flashlight-DV-S9-Driver](https://github.com/luicer/Linear-Flashlight-DV-S9-Driver)
 
 
-This design is open source hardware under the permissive CERN OHL-p V2 license."
+This design is open source hardware under the permissive CERN OHL-p V2 license.
 
 

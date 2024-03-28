@@ -3,8 +3,8 @@ main:
     url: /Eng_home/
   # - title: "Posts"
   #   url: /posts/
-  # - title: "Categorías"
-  #   url: /categories/
+  - title: "Categorías"
+    url: /categories/
   - title: "Tags en Español"
     url: /Es_tags/
   - title: "English Tags"
