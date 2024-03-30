@@ -13,11 +13,7 @@ tags:
   - Linterna
   - Driver Lineal
   - OSHW
- 
-  
-
-  
-
+   
 excerpt: "En este post se explica el diseño de un driver con regulador lineal regulable para linterna de buceo tipo DV-S9 para una intensidad de hasta 3 A y un tensión de entrada entre 3V y 4,2V además de una reducida intensidad de vacío. El driver consigue una eficiencia de entre 90 % y 70 % a intensidad máxima. Este diseño es open source hardware con los documentos diseño almacenados en Github."
 
 header:
