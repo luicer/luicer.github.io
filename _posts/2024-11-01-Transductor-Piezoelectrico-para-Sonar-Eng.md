@@ -21,7 +21,7 @@ header:
     teaser: /assets/images/2024/Intro_Sonda/Teaser.png
 ---
 
-[Spanish]({% post_url 2024-09-28-Transductor-Piezoelectrico-para-Sonar %})
+[Spanish]({% post_url 2024-11-01-Transductor-Piezoelectrico-para-Sonar %})
 
 # Introduction
 An ultrasonic echosounder is a device capable of detecting objects based on echoes produced by an ultrasonic pressure wave generator.

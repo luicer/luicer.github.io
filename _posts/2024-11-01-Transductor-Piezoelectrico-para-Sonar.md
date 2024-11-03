@@ -21,7 +21,7 @@ header:
     teaser: /assets/images/2024/Intro_Sonda/Teaser.png
 ---
 
-[English]({% post_url 2024-09-28-Transductor-Piezoelectrico-para-Sonar-Eng %})
+[English]({% post_url 2024-11-01-Transductor-Piezoelectrico-para-Sonar-Eng %})
 
 # Introducción
 Una ecosonda de ultrasonidos es un equipo que es capaz de poder detectar objetos en función de los ecos que se producen a partir de un generador de ondas de presión ultrasónicas.
