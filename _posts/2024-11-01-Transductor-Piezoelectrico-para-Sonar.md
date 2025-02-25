@@ -3,17 +3,17 @@ title: "Diseño de un sistema Ecosonar - Introducción"
 language: español
 
 toc: true
+toc: true
 categories: 
-  - Ecosonar  
- 
+  - Ecosonda  
 
   
 full-width: true
 tags:
-  - Piezoelectric
-  - Transducer
-  - Ultrasound 
-  - 3d Print
+  - Piezoeléctrico
+  - Transductor
+  - Ultrasonidos
+  - Medidas
 
 excerpt: En este artículo se introduce el diseño de un sistema de econsonda de alta precisión que incluye el diseño del transductor construido a través de impresión 3d, el diseño del controlador, como la programación del software para poder visualizar los datos.
 
@@ -26,7 +26,7 @@ header:
 # Introducción
 Una ecosonda de ultrasonidos es un equipo que es capaz de poder detectar objetos en función de los ecos que se producen a partir de un generador de ondas de presión ultrasónicas.
 
-En el mercado existen gran número de sondas comerciales que sirven tanto para analizar el fondo oceánico, como sondas de pesca o sistemas de localización para ROVs. Aquí se va ha presentar una primera versión de un sistema echosonda como una prueba de concepto que podrá servir como base para poder desarrollar un producto especifico en el futuro.   
+En el mercado existen gran número de sondas comerciales que sirven tanto para analizar el fondo oceánico, como sondas de pesca o sistemas de localización para ROVs. Aquí se va ha presentar una primera versión de un sistema ecosonda como una prueba de concepto que podrá servir como base para poder desarrollar un producto especifico en el futuro.   
 
 El equipo consta de las siguientes partes:
 

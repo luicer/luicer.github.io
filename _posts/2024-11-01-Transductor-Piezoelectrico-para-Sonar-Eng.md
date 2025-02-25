@@ -1,10 +1,10 @@
 ---
-title: "Design of an Echosonar system - Introduction"
+title: "Design of an Echosounder system - Introduction"
 language: english
 
 toc: true
 categories: 
-  - Ecosonar  
+  - Echosounder  
  
 
   
@@ -14,6 +14,7 @@ tags:
   - Transducer
   - Ultrasound 
   - 3d Print
+  - Sonar
 
 excerpt: This article introduces the design of a high-precision echosounder system that includes the design of a 3D-printed transducer, the design of the controller, as well as the software needed to visualize the data
 
