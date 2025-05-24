@@ -124,3 +124,5 @@ Se observa que, a menor impedancia acústica de la capa backlayer, se incrementa
 Se ha desarrollado un modelo numérico aproximado de un transductor piezoeléctrico, validado frente a resultados experimentales. Este modelo ha permitido estimar el TVR y analizar la influencia de distintos materiales en la capa backlayer. En el futuro, este enfoque podrá emplearse para optimizar el diseño de transductores y predecir su comportamiento bajo diferentes configuraciones.
 
 Para mejorar la precisión del modelo, se recomienda una caracterización más exhaustiva de las propiedades físicas de los materiales empleados, así como la inclusión de modos de vibración adicionales y la consideración de efectos no lineales o disipativos presentes en aplicaciones reales.
+
+Los archivos de simulación se pueden descargar en mi página de Github. [Link](https://github.com/luicer/Echosounder/tree/main/Simulation/LTspice/).

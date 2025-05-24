@@ -119,3 +119,5 @@ Results indicate that lower backlayer acoustic impedance increases radiated powe
 ## Conclusions and Future Work
 
 A representative LTspice model of a piezoelectric transducer has been developed and validated against experimental data. The model enables estimation of TVR and analysis of design parameters, such as backlayer material selection. For further refinement, more precise characterization of material properties is recommended, as well as inclusion of additional vibration modes for improved accuracy.
+
+The simulation fils can be downloaded in my github page. [Link](https://github.com/luicer/Echosounder/tree/main/Simulation/LTspice/).
