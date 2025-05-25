@@ -59,7 +59,7 @@ La impedancia del transductor, medida como la división entre la tensión de ent
 {:style="text-align:center;"}
 ![Impedance](/assets/images/2025/Simulacion/Z_cork.png "Impedance")
 
-La potencia transmitida por el transductor al agua, aplicando un voltaje de entrada senoidal de 100 voltios de Vrms, es la siguiente. La potencia para la frecuencia de 500 kHz sería de aproximadamente 5 W, que equivalen a 6 dBw:
+La potencia transmitida por el transductor al agua, aplicando un voltaje de entrada senoidal de 100 voltios de Vrms, es la siguiente. La potencia para la frecuencia de 500 kHz sería de aproximadamente 5 W, que equivalen a 6.9 dBw:
 
 {:style="text-align:center;"}
 ![Power](/assets/images/2025/Simulacion/Power_Cork.png "Power")

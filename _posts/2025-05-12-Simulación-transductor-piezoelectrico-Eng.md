@@ -58,7 +58,7 @@ The simulated electrical impedance of the transducer, defined as the ratio of in
 {:style="text-align:center;"}
 ![Impedance](/assets/images/2025/Simulacion/Z_cork.png "Impedance")
 
-The output acoustic power delivered to water, for a 100 Vrms sinusoidal excitation, is depicted below. At 500 kHz, the radiated power is approximately 5 W (6 dBw):
+The output acoustic power delivered to water, for a 100 Vrms sinusoidal excitation, is depicted below. At 500 kHz, the radiated power is approximately 5 W (6.9 dBw):
 
 {:style="text-align:center;"}
 ![Power](/assets/images/2025/Simulacion/Power_Cork.png "Power")
@@ -120,4 +120,4 @@ Results indicate that lower backlayer acoustic impedance increases radiated powe
 
 A representative LTspice model of a piezoelectric transducer has been developed and validated against experimental data. The model enables estimation of TVR and analysis of design parameters, such as backlayer material selection. For further refinement, more precise characterization of material properties is recommended, as well as inclusion of additional vibration modes for improved accuracy.
 
-The simulation fils can be downloaded in my github page. [Link](https://github.com/luicer/Echosounder/tree/main/Simulation/LTspice/).
+The simulation files can be downloaded in my github page. [Link](https://github.com/luicer/Echosounder/tree/main/Simulation/LTspice/).
