@@ -40,7 +40,7 @@ LTspice, a widely adopted and freely available circuit simulation tool, was used
 The transducer model, operating in thickness mode, was implemented in LTspice as follows:
 
 {:style="text-align:center;"}
-![Model](/assets/images/2025/Simulacion/Modelo_spiceAC_1.png "Model")
+![Model](/assets/images/2025/Simulacion/Modelo_SpiceAC_1.png "Model")
 
 The model includes the following components:
 
