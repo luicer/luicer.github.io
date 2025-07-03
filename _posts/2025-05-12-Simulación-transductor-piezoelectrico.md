@@ -42,6 +42,7 @@ El modelo de un transductor trabajando en modo espesor, implementado en LTspice,
 
 {:style="text-align:center;"}
 ![Modelo](/assets/images/2025/Simulacion/Modelo_SpiceAC_1.png "Modelo")
+![Modelo](/assets/images/2025/Simulacion/Modelo_SpiceAC_1.png "Modelo")
 
 El modelo consta de los siguientes elementos:
 
