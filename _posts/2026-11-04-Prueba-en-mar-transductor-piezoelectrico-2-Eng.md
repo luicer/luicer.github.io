@@ -30,7 +30,7 @@ The objective was to evaluate the performance of this new transducer under real 
 
 **Let's get started!**
 
-### Transductor de 200 kHz
+### 200 kHz Transducer
 
 The transducer was designed around a PZT piezoelectric element measuring 38 mm in diameter and 10 mm in thickness. This disc exhibits a resonance frequency close to 200 kHz in its thickness vibration mode, making it suitable for echo sounding and depth measurement applications.
 
