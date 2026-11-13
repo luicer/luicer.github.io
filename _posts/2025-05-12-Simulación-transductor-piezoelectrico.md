@@ -13,6 +13,7 @@ tags:
   - Ultrasonidos
   - Simulación
   - LTspice
+  - Sonar DIY
 
 
 excerpt: En esta entrada se implementará un modelo en SPICE de un transductor ultrasónico. Para validar este modelo, se comprobará que los resultados de la simulación se ajustan a las medidas realizadas sobre el transductor diseñado y construido, descritas en el post anterior. A partir de estos datos se estimará la TVR del transductor.

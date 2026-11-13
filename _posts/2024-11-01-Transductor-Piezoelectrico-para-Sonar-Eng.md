@@ -14,7 +14,7 @@ tags:
   - Transducer
   - Ultrasound 
   - 3d Print
-  - Sonar
+  - Sonar DIY
 
 excerpt: This article introduces the design of a high-precision echosounder system that includes the design of a 3D-printed transducer, the design of the controller, as well as the software needed to visualize the data
 

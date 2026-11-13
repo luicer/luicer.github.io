@@ -13,6 +13,7 @@ tags:
   - Ultrasound
   - Sea Test
   - Kayak
+  - Sonar DIY
 
 excerpt: This post presents the real sea trial of a low-cost echosounder system, including the design of the waterproof enclosure, the visualization app, and the results obtained under real conditions.
 

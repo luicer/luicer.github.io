@@ -13,6 +13,7 @@ tags:
   - Ultrasonidos
   - Prueba en Mar
   - Kayak
+  - Sonar DIY
 
 
 excerpt: En esta entrada se muestra la prueba en mar real de un sistema ecosonar de bajo coste, incluyendo el diseño de la carcasa estanca, la app de visualización y los resultados obtenidos en condiciones reales.

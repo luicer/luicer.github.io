@@ -13,6 +13,7 @@ tags:
   - Ultrasound
   - Sea Test
   - Kayak
+  - Sonar DIY
 
 excerpt: Development and sea testing of a custom 200 kHz piezoelectric transducer. The article presents the transducer design, characterization, test locations, sonar results obtained over different seabed types, and future improvements for the echo sounder system.
 

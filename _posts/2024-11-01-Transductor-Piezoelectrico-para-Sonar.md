@@ -14,6 +14,7 @@ tags:
   - Transductor
   - Ultrasonidos
   - Medidas
+  - Sonar DIY
 
 excerpt: En este artículo se introduce el diseño de un sistema de econsonda de alta precisión que incluye el diseño del transductor construido a través de impresión 3d, el diseño del controlador, como la programación del software para poder visualizar los datos.
 

@@ -13,6 +13,7 @@ tags:
   - Ultrasound
   - Simulation
   - LTspice
+  - Sonar DIY
 
 excerpt: This post presents the implementation of a SPICE-based model for an ultrasonic transducer. The model is validated by comparing simulation results with empirical measurements from a custom-built transducer, as described in the previous post. Based on these results, the TVR of the transducer is estimated.
 

@@ -13,6 +13,7 @@ tags:
   - Transductor
   - Ultrasonidos
   - Medidas
+  - Sonar DIY
 
 excerpt: En este artículo se presenta un montaje para la caracterización transductores piezoeléctricos, obteniendo su respuesta en frecuencia a partir del controlador sonar diseñado. El sistema permitirá comprobar las frecuencias más adecuadas para el funcionamiento del transductor y la potencia ultrasónica que es capaz de trasmitir al agua. 
 
@@ -22,8 +23,8 @@ header:
 
 [English]({% post_url 2025-02-23-Caracterización-transductor-piezoelectrico-Eng %})
 
+## Introducción
 
-# Introducción
 Un vez construidos varios transductores ultrasónicos surge la necesidad de analizar su comportamiento para asegurar que los cristales piezoeléctricos cumplen con las especificaciones declaradas.
 
 Un primer análisis factible de realizar es medir su respuesta en frecuencia, para ello es necesario excitar el sensor a diferentes frecuencias y medir su impedancia equivalente. Esto nos permitirá comprobar las frecuencias más adecuadas para el funcionamiento del transductor y la potencia que puede trasmitir al agua.
@@ -61,7 +62,8 @@ Se ha programado una interfaz gráfica en Python con el framework KIVY para auto
 Las medidas se hacen con el transductor sumergido en un recipiente con agua.
 
 
-# Resultados.
+##  Resultados.
+
 Los resultados de las medidas son los siguientes:
 
 Transductor de 20mm de diámetro.
@@ -91,7 +93,7 @@ Por ejemplo:
 
 La resistencia de impedancia del transductor de 50 mm es mas grande que la del transductor de 20mm, por tanto se demuestra que el sensor más grande es capaz de enviar mas potencia ultrasónica y por tanto tendrá más alcance.
 
-# Conclusiones y trabajos futuros.
+##  Conclusiones y trabajos futuros.
 
 Se ha desarrollado un sistema para obtener la respuesta en frecuencia de los transductores sonar. A partir de estos datos en el futuro se pueden obtener un modelo del transductor y calcular los parámetros de un circuito equivalente.
 

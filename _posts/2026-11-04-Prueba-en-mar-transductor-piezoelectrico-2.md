@@ -13,6 +13,8 @@ tags:
   - Ultrasonidos
   - Prueba en Mar
   - Kayak
+  - Sonar DIY
+  
 
 
 excerpt: Diseño y prueba de un transductor ultrasónico de 200 kHz. En esta entrada presento su desarrollo y los resultados obtenidos durante ensayos reales en el mar, evaluando su capacidad para detectar el fondo marino e incluso localizar peces. 

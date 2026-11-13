@@ -13,6 +13,7 @@ tags:
   - Transducer
   - Ultrasound 
   - Measure
+  - Sonar DIY
 
 excerpt: This article presents a setup for the characterization of piezoelectric transducers, measuring their frequency response using the designed custom sonar controller. The system will determine the most suitable frequencies for the transducer's operation and the ultrasonic power it can transmit to water.
 
